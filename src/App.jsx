@@ -12,24 +12,24 @@ function App() {
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/22")
 
   function getPokemon(){
-    const random = Math.random() * 1000
+    const random = Math.floor (Math.random() * 1000)
     setUrl(`https://pokeapi.co/api/v2/pokemon/${random}`)
   }
   useEffect(() => {
 
-    /**const getPokemonData = async () => {
+      const getPokemonData = async() => {
+        const reponse = await fetch(url);
+        const data = await reponse.json()
+        setPokemon(data)
+      }
 
+     /**const getPokemonData = async () => {
     const url = ("https://pokeapi.co/api/v2/pokemon/22");
     const result = await axios.get(url);
     const data = await result.json()
     setPokemon(result.data)
     }*/
-
-    const getPokemonData = async() => {
-        const reponse = await fetch(url);
-        const data = await reponse.json()
-        setPokemon(data )
-      }
+      
     getPokemonData()
   }, [url]);
   
