@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage:{
+        'bg-card':'url(/images/bg-pattern-card.svg)'
+      }
     },
   },
   plugins: [],
